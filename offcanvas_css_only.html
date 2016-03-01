@@ -1,0 +1,58 @@
+<html>
+<head>
+<style>
+#menu {
+    display: block;
+    width: 300px;
+    min-height: 100%;
+    top: 0;
+    z-index: 9999;
+    position:fixed;
+}
+
+#menu  .toggle {
+    top: 0;
+    left: 300px;
+    padding:10px;
+    position: absolute;
+}
+
+#toggle{
+    display: none;
+}
+
+#menu {
+    left: -300px;
+    -webkit-transition: left 1s;
+    transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86); 
+    background-color: black;
+}
+
+#toggle:checked + #menu {
+    left: 0;
+    -webkit-transition: left 1s;  
+    transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86); 
+}
+
+.menuContent {
+  background-color: black;
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Checkbox to show/hide the navigation menu -->
+<input type="checkbox" name="menu" value="toggle" id="toggle">
+
+<!-- navigation menu container -->
+<section id="menu">
+
+  <!-- Lable for #showmenu to hide the menu/uncheck the checkbox -->
+  <label class="toggle" for="toggle" href="#"> open</label>
+
+  <!-- Menu content -->
+  <nav class="menuContent"></nav>
+</section>
+</body>
